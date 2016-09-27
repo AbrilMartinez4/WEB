@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UTTModelStoreContainer" CdmEntityContainer="WEBContext">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="UTTModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAlumnoes">
+      <EntityTypeMapping TypeName="UTTModel.tbAlumno">
+        <MappingFragment StoreEntitySet="tbAlumno">
+          <ScalarProperty Name="MatriculaTBAlum" ColumnName="MatriculaTBAlum" />
+          <ScalarProperty Name="NombreTBAlum" ColumnName="NombreTBAlum" />
+          <ScalarProperty Name="ApPaternoTBAlum" ColumnName="ApPaternoTBAlum" />
+          <ScalarProperty Name="ApMaternoTBAlum" ColumnName="ApMaternoTBAlum" />
+          <ScalarProperty Name="DireccionTBAlum" ColumnName="DireccionTBAlum" />
+          <ScalarProperty Name="TelefonoTBAlum" ColumnName="TelefonoTBAlum" />
+          <ScalarProperty Name="EmailTBAlum" ColumnName="EmailTBAlum" />
+          <ScalarProperty Name="ClienteIDTBAlum" ColumnName="ClienteIDTBAlum" />
+          <ScalarProperty Name="EliminarTBAlum" ColumnName="EliminarTBAlum" />
+          <ScalarProperty Name="CarreraIDTBAlum" ColumnName="CarreraIDTBAlum" />
+          <ScalarProperty Name="SemestreTBAlum" ColumnName="SemestreTBAlum" />
+          <ScalarProperty Name="GrupoTBAlum" ColumnName="GrupoTBAlum" />
+          <ScalarProperty Name="CuatriactTBAlum" ColumnName="CuatriactTBAlum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCarreras">
+      <EntityTypeMapping TypeName="UTTModel.tbCarrera">
+        <MappingFragment StoreEntitySet="tbCarrera">
+          <ScalarProperty Name="DescripcionTBCarr" ColumnName="DescripcionTBCarr" />
+          <ScalarProperty Name="EliminarTBCarr" ColumnName="EliminarTBCarr" />
+          <ScalarProperty Name="CarreraIDTBCarr" ColumnName="CarreraIDTBCarr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCatalogoes">
+      <EntityTypeMapping TypeName="UTTModel.tbCatalogo">
+        <MappingFragment StoreEntitySet="tbCatalogo">
+          <ScalarProperty Name="CatalogoIDTBCata" ColumnName="CatalogoIDTBCata" />
+          <ScalarProperty Name="DescripcionTBCata" ColumnName="DescripcionTBCata" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbClientes">
+      <EntityTypeMapping TypeName="UTTModel.tbCliente">
+        <MappingFragment StoreEntitySet="tbCliente">
+          <ScalarProperty Name="ClienteIDTBClie" ColumnName="ClienteIDTBClie" />
+          <ScalarProperty Name="EliminarTBClie" ColumnName="EliminarTBClie" />
+          <ScalarProperty Name="TienePrestamoTBClie" ColumnName="TienePrestamoTBClie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDepartamentoes">
+      <EntityTypeMapping TypeName="UTTModel.tbDepartamento">
+        <MappingFragment StoreEntitySet="tbDepartamento">
+          <ScalarProperty Name="DescripcionTBDepa" ColumnName="DescripcionTBDepa" />
+          <ScalarProperty Name="EliminarTBDepa" ColumnName="EliminarTBDepa" />
+          <ScalarProperty Name="DepartamentoIDTBDepa" ColumnName="DepartamentoIDTBDepa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEstadoes">
+      <EntityTypeMapping TypeName="UTTModel.tbEstado">
+        <MappingFragment StoreEntitySet="tbEstado">
+          <ScalarProperty Name="EstadoIDTBEsta" ColumnName="EstadoIDTBEsta" />
+          <ScalarProperty Name="DescripcionTBEsta" ColumnName="DescripcionTBEsta" />
+          <ScalarProperty Name="ComentarioTBEsta" ColumnName="ComentarioTBEsta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMaestroes">
+      <EntityTypeMapping TypeName="UTTModel.tbMaestro">
+        <MappingFragment StoreEntitySet="tbMaestro">
+          <ScalarProperty Name="MatriculaTBMaes" ColumnName="MatriculaTBMaes" />
+          <ScalarProperty Name="NombreTBMaes" ColumnName="NombreTBMaes" />
+          <ScalarProperty Name="ApPaternoTBMaes" ColumnName="ApPaternoTBMaes" />
+          <ScalarProperty Name="ApMaternoTBMaes" ColumnName="ApMaternoTBMaes" />
+          <ScalarProperty Name="DireccionTBMaes" ColumnName="DireccionTBMaes" />
+          <ScalarProperty Name="TelefonoTBMaes" ColumnName="TelefonoTBMaes" />
+          <ScalarProperty Name="EmailTBMaes" ColumnName="EmailTBMaes" />
+          <ScalarProperty Name="ClienteIDTBMaes" ColumnName="ClienteIDTBMaes" />
+          <ScalarProperty Name="EliminarTBMaes" ColumnName="EliminarTBMaes" />
+          <ScalarProperty Name="DepartamentoIDTBMaes" ColumnName="DepartamentoIDTBMaes" />
+          <ScalarProperty Name="PrestamoEspecialTBMaes" ColumnName="PrestamoEspecialTBMaes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMaterials">
+      <EntityTypeMapping TypeName="UTTModel.tbMaterial">
+        <MappingFragment StoreEntitySet="tbMaterial">
+          <ScalarProperty Name="MaterialIDTBMate" ColumnName="MaterialIDTBMate" />
+          <ScalarProperty Name="DescripcionTBMate" ColumnName="DescripcionTBMate" />
+          <ScalarProperty Name="MarcaTBMate" ColumnName="MarcaTBMate" />
+          <ScalarProperty Name="CostoTBMate" ColumnName="CostoTBMate" />
+          <ScalarProperty Name="CantidadTBMate" ColumnName="CantidadTBMate" />
+          <ScalarProperty Name="EliminarTBMate" ColumnName="EliminarTBMate" />
+          <ScalarProperty Name="EstadoTBMate" ColumnName="EstadoTBMate" />
+          <ScalarProperty Name="CodigoTBMate" ColumnName="CodigoTBMate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNivels">
+      <EntityTypeMapping TypeName="UTTModel.tbNivel">
+        <MappingFragment StoreEntitySet="tbNivel">
+          <ScalarProperty Name="NivelIDTBNive" ColumnName="NivelIDTBNive" />
+          <ScalarProperty Name="DescripcionTBNive" ColumnName="DescripcionTBNive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPrestamoes">
+      <EntityTypeMapping TypeName="UTTModel.tbPrestamo">
+        <MappingFragment StoreEntitySet="tbPrestamo">
+          <ScalarProperty Name="PrestamoIDTBPres" ColumnName="PrestamoIDTBPres" />
+          <ScalarProperty Name="UsuarioIDTBPres" ColumnName="UsuarioIDTBPres" />
+          <ScalarProperty Name="ClienteIDTBPres" ColumnName="ClienteIDTBPres" />
+          <ScalarProperty Name="FechaPrestamoTBPres" ColumnName="FechaPrestamoTBPres" />
+          <ScalarProperty Name="FechaEntregaTBPres" ColumnName="FechaEntregaTBPres" />
+          <ScalarProperty Name="ComentarioTBPres" ColumnName="ComentarioTBPres" />
+          <ScalarProperty Name="ActivoTBPres" ColumnName="ActivoTBPres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTipoUsuarios">
+      <EntityTypeMapping TypeName="UTTModel.tbTipoUsuario">
+        <MappingFragment StoreEntitySet="tbTipoUsuario">
+          <ScalarProperty Name="TipoIDTBTiUs" ColumnName="TipoIDTBTiUs" />
+          <ScalarProperty Name="DescripcionTBTiUs" ColumnName="DescripcionTBTiUs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsuarios">
+      <EntityTypeMapping TypeName="UTTModel.tbUsuario">
+        <MappingFragment StoreEntitySet="tbUsuario">
+          <ScalarProperty Name="UsuarioIDTBUsua" ColumnName="UsuarioIDTBUsua" />
+          <ScalarProperty Name="ContraseñaTBUsua" ColumnName="ContraseñaTBUsua" />
+          <ScalarProperty Name="NombreUsuarioTBUsua" ColumnName="NombreUsuarioTBUsua" />
+          <ScalarProperty Name="NombreTBUsua" ColumnName="NombreTBUsua" />
+          <ScalarProperty Name="ApPaternoTBUsua" ColumnName="ApPaternoTBUsua" />
+          <ScalarProperty Name="ApMaternoTBUsua" ColumnName="ApMaternoTBUsua" />
+          <ScalarProperty Name="EliminarTBUsua" ColumnName="EliminarTBUsua" />
+          <ScalarProperty Name="UsuarioTipoTBUsua" ColumnName="UsuarioTipoTBUsua" />
+          <ScalarProperty Name="NivelTBUsua" ColumnName="NivelTBUsua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMaterialPrestamoes">
+      <EntityTypeMapping TypeName="UTTModel.tbMaterialPrestamo">
+        <MappingFragment StoreEntitySet="tbMaterialPrestamo">
+          <ScalarProperty Name="PrestamoIDTBMaPr" ColumnName="PrestamoIDTBMaPr" />
+          <ScalarProperty Name="MaterialIDTBMaPr" ColumnName="MaterialIDTBMaPr" />
+          <ScalarProperty Name="CantidadTBMaPr" ColumnName="CantidadTBMaPr" />
+          <ScalarProperty Name="CantidadEntregadaTBMaPr" ColumnName="CantidadEntregadaTBMaPr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRegistroes">
+      <EntityTypeMapping TypeName="UTTModel.tbRegistro">
+        <MappingFragment StoreEntitySet="tbRegistro">
+          <ScalarProperty Name="RegistroIDTBRegi" ColumnName="RegistroIDTBRegi" />
+          <ScalarProperty Name="HoraTBRegi" ColumnName="HoraTBRegi" />
+          <ScalarProperty Name="FechaTBRegi" ColumnName="FechaTBRegi" />
+          <ScalarProperty Name="CatalogoTBRegi" ColumnName="CatalogoTBRegi" />
+          <ScalarProperty Name="UsuarioTBRegi" ColumnName="UsuarioTBRegi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

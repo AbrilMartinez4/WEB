@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="98446bd2945e4b618d8c9af7f1e53535" Name="Diagram1">
+        <EntityTypeShape EntityType="UTTModel.sysdiagram" Width="1.5" PointX="7.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbAlumno" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbCarrera" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbCatalogo" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbCliente" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbDepartamento" Width="1.5" PointX="6" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbEstado" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbMaestro" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbMaterial" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbNivel" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbPrestamo" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbTipoUsuario" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbUsuario" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbMaterialPrestamo" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UTTModel.tbRegistro" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="UTTModel.FK_tbAlumno_tbCarrera1" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbAlumno_tbCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbRegistro_tbCatalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbMaestro_tbCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbPrestamo_tbCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbMaestro_tbDepartamento1" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbMaterial_tbEstado" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbMaterialPrestamo_tbMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbUsuario_tbNivel" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbMaterialPrestamo_tbPrestamo" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbPrestamo_tbUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbUsuario_tbTipoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="UTTModel.FK_tbRegistro_tbUsuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

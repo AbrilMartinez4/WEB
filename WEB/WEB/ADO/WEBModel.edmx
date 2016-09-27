@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UTTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbAlumno">
+          <Key>
+            <PropertyRef Name="ClienteIDTBAlum" />
+          </Key>
+          <Property Name="MatriculaTBAlum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreTBAlum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApPaternoTBAlum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApMaternoTBAlum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DireccionTBAlum" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TelefonoTBAlum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailTBAlum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClienteIDTBAlum" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EliminarTBAlum" Type="bit" Nullable="false" />
+          <Property Name="CarreraIDTBAlum" Type="int" Nullable="false" />
+          <Property Name="SemestreTBAlum" Type="int" Nullable="false" />
+          <Property Name="GrupoTBAlum" Type="varchar" MaxLength="50" />
+          <Property Name="CuatriactTBAlum" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCarrera">
+          <Key>
+            <PropertyRef Name="CarreraIDTBCarr" />
+          </Key>
+          <Property Name="DescripcionTBCarr" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EliminarTBCarr" Type="bit" Nullable="false" />
+          <Property Name="CarreraIDTBCarr" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCatalogo">
+          <Key>
+            <PropertyRef Name="CatalogoIDTBCata" />
+          </Key>
+          <Property Name="CatalogoIDTBCata" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DescripcionTBCata" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbCliente">
+          <Key>
+            <PropertyRef Name="ClienteIDTBClie" />
+          </Key>
+          <Property Name="ClienteIDTBClie" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EliminarTBClie" Type="bit" Nullable="false" />
+          <Property Name="TienePrestamoTBClie" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbDepartamento">
+          <Key>
+            <PropertyRef Name="DepartamentoIDTBDepa" />
+          </Key>
+          <Property Name="DescripcionTBDepa" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EliminarTBDepa" Type="bit" Nullable="false" />
+          <Property Name="DepartamentoIDTBDepa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbEstado">
+          <Key>
+            <PropertyRef Name="EstadoIDTBEsta" />
+          </Key>
+          <Property Name="EstadoIDTBEsta" Type="int" Nullable="false" />
+          <Property Name="DescripcionTBEsta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ComentarioTBEsta" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMaestro">
+          <Key>
+            <PropertyRef Name="ClienteIDTBMaes" />
+          </Key>
+          <Property Name="MatriculaTBMaes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreTBMaes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApPaternoTBMaes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApMaternoTBMaes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DireccionTBMaes" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TelefonoTBMaes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailTBMaes" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClienteIDTBMaes" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EliminarTBMaes" Type="bit" Nullable="false" />
+          <Property Name="DepartamentoIDTBMaes" Type="int" Nullable="false" />
+          <Property Name="PrestamoEspecialTBMaes" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbMaterial">
+          <Key>
+            <PropertyRef Name="MaterialIDTBMate" />
+          </Key>
+          <Property Name="MaterialIDTBMate" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DescripcionTBMate" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="MarcaTBMate" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CostoTBMate" Type="float" Nullable="false" />
+          <Property Name="CantidadTBMate" Type="int" Nullable="false" />
+          <Property Name="EliminarTBMate" Type="bit" Nullable="false" />
+          <Property Name="EstadoTBMate" Type="int" Nullable="false" />
+          <Property Name="CodigoTBMate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'UTT.dbo.tbMaterialPrestamo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="tbMaterialPrestamo">
+          <Key>
+            <PropertyRef Name="PrestamoIDTBMaPr" />
+            <PropertyRef Name="MaterialIDTBMaPr" />
+            <PropertyRef Name="CantidadTBMaPr" />
+          </Key>
+          <Property Name="PrestamoIDTBMaPr" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MaterialIDTBMaPr" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CantidadTBMaPr" Type="int" Nullable="false" />
+          <Property Name="CantidadEntregadaTBMaPr" Type="int" />
+        </EntityType>
+        <EntityType Name="tbNivel">
+          <Key>
+            <PropertyRef Name="NivelIDTBNive" />
+          </Key>
+          <Property Name="NivelIDTBNive" Type="int" Nullable="false" />
+          <Property Name="DescripcionTBNive" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbPrestamo">
+          <Key>
+            <PropertyRef Name="PrestamoIDTBPres" />
+          </Key>
+          <Property Name="PrestamoIDTBPres" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UsuarioIDTBPres" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ClienteIDTBPres" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaPrestamoTBPres" Type="datetime" Nullable="false" />
+          <Property Name="FechaEntregaTBPres" Type="datetime" Nullable="false" />
+          <Property Name="ComentarioTBPres" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ActivoTBPres" Type="bit" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'UTT.dbo.tbRegistro' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="tbRegistro">
+          <Key>
+            <PropertyRef Name="RegistroIDTBRegi" />
+          </Key>
+          <Property Name="RegistroIDTBRegi" Type="int" Nullable="false" />
+          <Property Name="HoraTBRegi" Type="time" Precision="7" />
+          <Property Name="FechaTBRegi" Type="date" />
+          <Property Name="CatalogoTBRegi" Type="uniqueidentifier" />
+          <Property Name="UsuarioTBRegi" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tbTipoUsuario">
+          <Key>
+            <PropertyRef Name="TipoIDTBTiUs" />
+          </Key>
+          <Property Name="TipoIDTBTiUs" Type="int" Nullable="false" />
+          <Property Name="DescripcionTBTiUs" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUsuario">
+          <Key>
+            <PropertyRef Name="UsuarioIDTBUsua" />
+          </Key>
+          <Property Name="UsuarioIDTBUsua" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ContraseñaTBUsua" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreUsuarioTBUsua" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreTBUsua" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApPaternoTBUsua" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApMaternoTBUsua" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EliminarTBUsua" Type="bit" Nullable="false" />
+          <Property Name="UsuarioTipoTBUsua" Type="int" Nullable="false" />
+          <Property Name="NivelTBUsua" Type="int" />
+        </EntityType>
+        <Association Name="FK_tbAlumno_tbCarrera1">
+          <End Role="tbCarrera" Type="Self.tbCarrera" Multiplicity="1" />
+          <End Role="tbAlumno" Type="Self.tbAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCarrera">
+              <PropertyRef Name="CarreraIDTBCarr" />
+            </Principal>
+            <Dependent Role="tbAlumno">
+              <PropertyRef Name="CarreraIDTBAlum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbAlumno_tbCliente">
+          <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+          <End Role="tbAlumno" Type="Self.tbAlumno" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbCliente">
+              <PropertyRef Name="ClienteIDTBClie" />
+            </Principal>
+            <Dependent Role="tbAlumno">
+              <PropertyRef Name="ClienteIDTBAlum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaestro_tbCliente">
+          <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+          <End Role="tbMaestro" Type="Self.tbMaestro" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbCliente">
+              <PropertyRef Name="ClienteIDTBClie" />
+            </Principal>
+            <Dependent Role="tbMaestro">
+              <PropertyRef Name="ClienteIDTBMaes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaestro_tbDepartamento1">
+          <End Role="tbDepartamento" Type="Self.tbDepartamento" Multiplicity="1" />
+          <End Role="tbMaestro" Type="Self.tbMaestro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartamento">
+              <PropertyRef Name="DepartamentoIDTBDepa" />
+            </Principal>
+            <Dependent Role="tbMaestro">
+              <PropertyRef Name="DepartamentoIDTBMaes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaterial_tbEstado">
+          <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="1" />
+          <End Role="tbMaterial" Type="Self.tbMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbEstado">
+              <PropertyRef Name="EstadoIDTBEsta" />
+            </Principal>
+            <Dependent Role="tbMaterial">
+              <PropertyRef Name="EstadoTBMate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaterialPrestamo_tbMaterial">
+          <End Role="tbMaterial" Type="Self.tbMaterial" Multiplicity="1" />
+          <End Role="tbMaterialPrestamo" Type="Self.tbMaterialPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMaterial">
+              <PropertyRef Name="MaterialIDTBMate" />
+            </Principal>
+            <Dependent Role="tbMaterialPrestamo">
+              <PropertyRef Name="MaterialIDTBMaPr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaterialPrestamo_tbPrestamo">
+          <End Role="tbPrestamo" Type="Self.tbPrestamo" Multiplicity="1" />
+          <End Role="tbMaterialPrestamo" Type="Self.tbMaterialPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbPrestamo">
+              <PropertyRef Name="PrestamoIDTBPres" />
+            </Principal>
+            <Dependent Role="tbMaterialPrestamo">
+              <PropertyRef Name="PrestamoIDTBMaPr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPrestamo_tbCliente">
+          <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+          <End Role="tbPrestamo" Type="Self.tbPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCliente">
+              <PropertyRef Name="ClienteIDTBClie" />
+            </Principal>
+            <Dependent Role="tbPrestamo">
+              <PropertyRef Name="ClienteIDTBPres" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPrestamo_tbUsuario">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+          <End Role="tbPrestamo" Type="Self.tbPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="UsuarioIDTBUsua" />
+            </Principal>
+            <Dependent Role="tbPrestamo">
+              <PropertyRef Name="UsuarioIDTBPres" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRegistro_tbCatalogo">
+          <End Role="tbCatalogo" Type="Self.tbCatalogo" Multiplicity="0..1" />
+          <End Role="tbRegistro" Type="Self.tbRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCatalogo">
+              <PropertyRef Name="CatalogoIDTBCata" />
+            </Principal>
+            <Dependent Role="tbRegistro">
+              <PropertyRef Name="CatalogoTBRegi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRegistro_tbUsuario">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="0..1" />
+          <End Role="tbRegistro" Type="Self.tbRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="UsuarioIDTBUsua" />
+            </Principal>
+            <Dependent Role="tbRegistro">
+              <PropertyRef Name="UsuarioTBRegi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUsuario_tbNivel">
+          <End Role="tbNivel" Type="Self.tbNivel" Multiplicity="0..1" />
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbNivel">
+              <PropertyRef Name="NivelIDTBNive" />
+            </Principal>
+            <Dependent Role="tbUsuario">
+              <PropertyRef Name="NivelTBUsua" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUsuario_tbTipoUsuario">
+          <End Role="tbTipoUsuario" Type="Self.tbTipoUsuario" Multiplicity="1" />
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbTipoUsuario">
+              <PropertyRef Name="TipoIDTBTiUs" />
+            </Principal>
+            <Dependent Role="tbUsuario">
+              <PropertyRef Name="UsuarioTipoTBUsua" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UTTModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbAlumno" EntityType="Self.tbAlumno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbCarrera" EntityType="Self.tbCarrera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbCatalogo" EntityType="Self.tbCatalogo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbDepartamento" EntityType="Self.tbDepartamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbEstado" EntityType="Self.tbEstado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbMaestro" EntityType="Self.tbMaestro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbMaterial" EntityType="Self.tbMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbNivel" EntityType="Self.tbNivel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbPrestamo" EntityType="Self.tbPrestamo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbTipoUsuario" EntityType="Self.tbTipoUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbUsuario" EntityType="Self.tbUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbMaterialPrestamo" EntityType="Self.tbMaterialPrestamo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbMaterialPrestamo].[PrestamoIDTBMaPr] AS [PrestamoIDTBMaPr], 
+    [tbMaterialPrestamo].[MaterialIDTBMaPr] AS [MaterialIDTBMaPr], 
+    [tbMaterialPrestamo].[CantidadTBMaPr] AS [CantidadTBMaPr], 
+    [tbMaterialPrestamo].[CantidadEntregadaTBMaPr] AS [CantidadEntregadaTBMaPr]
+    FROM [dbo].[tbMaterialPrestamo] AS [tbMaterialPrestamo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbRegistro" EntityType="Self.tbRegistro" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbRegistro].[RegistroIDTBRegi] AS [RegistroIDTBRegi], 
+    [tbRegistro].[HoraTBRegi] AS [HoraTBRegi], 
+    [tbRegistro].[FechaTBRegi] AS [FechaTBRegi], 
+    [tbRegistro].[CatalogoTBRegi] AS [CatalogoTBRegi], 
+    [tbRegistro].[UsuarioTBRegi] AS [UsuarioTBRegi]
+    FROM [dbo].[tbRegistro] AS [tbRegistro]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tbAlumno_tbCarrera1" Association="Self.FK_tbAlumno_tbCarrera1">
+            <End Role="tbCarrera" EntitySet="tbCarrera" />
+            <End Role="tbAlumno" EntitySet="tbAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbAlumno_tbCliente" Association="Self.FK_tbAlumno_tbCliente">
+            <End Role="tbCliente" EntitySet="tbCliente" />
+            <End Role="tbAlumno" EntitySet="tbAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaestro_tbCliente" Association="Self.FK_tbMaestro_tbCliente">
+            <End Role="tbCliente" EntitySet="tbCliente" />
+            <End Role="tbMaestro" EntitySet="tbMaestro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaestro_tbDepartamento1" Association="Self.FK_tbMaestro_tbDepartamento1">
+            <End Role="tbDepartamento" EntitySet="tbDepartamento" />
+            <End Role="tbMaestro" EntitySet="tbMaestro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaterial_tbEstado" Association="Self.FK_tbMaterial_tbEstado">
+            <End Role="tbEstado" EntitySet="tbEstado" />
+            <End Role="tbMaterial" EntitySet="tbMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaterialPrestamo_tbMaterial" Association="Self.FK_tbMaterialPrestamo_tbMaterial">
+            <End Role="tbMaterial" EntitySet="tbMaterial" />
+            <End Role="tbMaterialPrestamo" EntitySet="tbMaterialPrestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaterialPrestamo_tbPrestamo" Association="Self.FK_tbMaterialPrestamo_tbPrestamo">
+            <End Role="tbPrestamo" EntitySet="tbPrestamo" />
+            <End Role="tbMaterialPrestamo" EntitySet="tbMaterialPrestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPrestamo_tbCliente" Association="Self.FK_tbPrestamo_tbCliente">
+            <End Role="tbCliente" EntitySet="tbCliente" />
+            <End Role="tbPrestamo" EntitySet="tbPrestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPrestamo_tbUsuario" Association="Self.FK_tbPrestamo_tbUsuario">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbPrestamo" EntitySet="tbPrestamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRegistro_tbCatalogo" Association="Self.FK_tbRegistro_tbCatalogo">
+            <End Role="tbCatalogo" EntitySet="tbCatalogo" />
+            <End Role="tbRegistro" EntitySet="tbRegistro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRegistro_tbUsuario" Association="Self.FK_tbRegistro_tbUsuario">
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+            <End Role="tbRegistro" EntitySet="tbRegistro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUsuario_tbNivel" Association="Self.FK_tbUsuario_tbNivel">
+            <End Role="tbNivel" EntitySet="tbNivel" />
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUsuario_tbTipoUsuario" Association="Self.FK_tbUsuario_tbTipoUsuario">
+            <End Role="tbTipoUsuario" EntitySet="tbTipoUsuario" />
+            <End Role="tbUsuario" EntitySet="tbUsuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UTTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbAlumno">
+          <Key>
+            <PropertyRef Name="ClienteIDTBAlum" />
+          </Key>
+          <Property Name="MatriculaTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApPaternoTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApMaternoTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DireccionTBAlum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmailTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClienteIDTBAlum" Type="Guid" Nullable="false" />
+          <Property Name="EliminarTBAlum" Type="Boolean" Nullable="false" />
+          <Property Name="CarreraIDTBAlum" Type="Int32" Nullable="false" />
+          <Property Name="SemestreTBAlum" Type="Int32" Nullable="false" />
+          <Property Name="GrupoTBAlum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CuatriactTBAlum" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbCarrera" Relationship="Self.FK_tbAlumno_tbCarrera1" FromRole="tbAlumno" ToRole="tbCarrera" />
+          <NavigationProperty Name="tbCliente" Relationship="Self.FK_tbAlumno_tbCliente" FromRole="tbAlumno" ToRole="tbCliente" />
+        </EntityType>
+        <EntityType Name="tbCarrera">
+          <Key>
+            <PropertyRef Name="CarreraIDTBCarr" />
+          </Key>
+          <Property Name="DescripcionTBCarr" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EliminarTBCarr" Type="Boolean" Nullable="false" />
+          <Property Name="CarreraIDTBCarr" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbAlumnoes" Relationship="Self.FK_tbAlumno_tbCarrera1" FromRole="tbCarrera" ToRole="tbAlumno" />
+        </EntityType>
+        <EntityType Name="tbCatalogo">
+          <Key>
+            <PropertyRef Name="CatalogoIDTBCata" />
+          </Key>
+          <Property Name="CatalogoIDTBCata" Type="Guid" Nullable="false" />
+          <Property Name="DescripcionTBCata" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbRegistroes" Relationship="Self.FK_tbRegistro_tbCatalogo" FromRole="tbCatalogo" ToRole="tbRegistro" />
+        </EntityType>
+        <EntityType Name="tbCliente">
+          <Key>
+            <PropertyRef Name="ClienteIDTBClie" />
+          </Key>
+          <Property Name="ClienteIDTBClie" Type="Guid" Nullable="false" />
+          <Property Name="EliminarTBClie" Type="Boolean" Nullable="false" />
+          <Property Name="TienePrestamoTBClie" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbAlumno" Relationship="Self.FK_tbAlumno_tbCliente" FromRole="tbCliente" ToRole="tbAlumno" />
+          <NavigationProperty Name="tbMaestro" Relationship="Self.FK_tbMaestro_tbCliente" FromRole="tbCliente" ToRole="tbMaestro" />
+          <NavigationProperty Name="tbPrestamoes" Relationship="Self.FK_tbPrestamo_tbCliente" FromRole="tbCliente" ToRole="tbPrestamo" />
+        </EntityType>
+        <EntityType Name="tbDepartamento">
+          <Key>
+            <PropertyRef Name="DepartamentoIDTBDepa" />
+          </Key>
+          <Property Name="DescripcionTBDepa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EliminarTBDepa" Type="Boolean" Nullable="false" />
+          <Property Name="DepartamentoIDTBDepa" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbMaestroes" Relationship="Self.FK_tbMaestro_tbDepartamento1" FromRole="tbDepartamento" ToRole="tbMaestro" />
+        </EntityType>
+        <EntityType Name="tbEstado">
+          <Key>
+            <PropertyRef Name="EstadoIDTBEsta" />
+          </Key>
+          <Property Name="EstadoIDTBEsta" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionTBEsta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ComentarioTBEsta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tbMaterials" Relationship="Self.FK_tbMaterial_tbEstado" FromRole="tbEstado" ToRole="tbMaterial" />
+        </EntityType>
+        <EntityType Name="tbMaestro">
+          <Key>
+            <PropertyRef Name="ClienteIDTBMaes" />
+          </Key>
+          <Property Name="MatriculaTBMaes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreTBMaes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApPaternoTBMaes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApMaternoTBMaes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DireccionTBMaes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoTBMaes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmailTBMaes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClienteIDTBMaes" Type="Guid" Nullable="false" />
+          <Property Name="EliminarTBMaes" Type="Boolean" Nullable="false" />
+          <Property Name="DepartamentoIDTBMaes" Type="Int32" Nullable="false" />
+          <Property Name="PrestamoEspecialTBMaes" Type="Boolean" />
+          <NavigationProperty Name="tbCliente" Relationship="Self.FK_tbMaestro_tbCliente" FromRole="tbMaestro" ToRole="tbCliente" />
+          <NavigationProperty Name="tbDepartamento" Relationship="Self.FK_tbMaestro_tbDepartamento1" FromRole="tbMaestro" ToRole="tbDepartamento" />
+        </EntityType>
+        <EntityType Name="tbMaterial">
+          <Key>
+            <PropertyRef Name="MaterialIDTBMate" />
+          </Key>
+          <Property Name="MaterialIDTBMate" Type="Guid" Nullable="false" />
+          <Property Name="DescripcionTBMate" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MarcaTBMate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CostoTBMate" Type="Double" Nullable="false" />
+          <Property Name="CantidadTBMate" Type="Int32" Nullable="false" />
+          <Property Name="EliminarTBMate" Type="Boolean" Nullable="false" />
+          <Property Name="EstadoTBMate" Type="Int32" Nullable="false" />
+          <Property Name="CodigoTBMate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbEstado" Relationship="Self.FK_tbMaterial_tbEstado" FromRole="tbMaterial" ToRole="tbEstado" />
+          <NavigationProperty Name="tbMaterialPrestamoes" Relationship="Self.FK_tbMaterialPrestamo_tbMaterial" FromRole="tbMaterial" ToRole="tbMaterialPrestamo" />
+        </EntityType>
+        <EntityType Name="tbNivel">
+          <Key>
+            <PropertyRef Name="NivelIDTBNive" />
+          </Key>
+          <Property Name="NivelIDTBNive" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionTBNive" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbUsuarios" Relationship="Self.FK_tbUsuario_tbNivel" FromRole="tbNivel" ToRole="tbUsuario" />
+        </EntityType>
+        <EntityType Name="tbPrestamo">
+          <Key>
+            <PropertyRef Name="PrestamoIDTBPres" />
+          </Key>
+          <Property Name="PrestamoIDTBPres" Type="Guid" Nullable="false" />
+          <Property Name="UsuarioIDTBPres" Type="Guid" Nullable="false" />
+          <Property Name="ClienteIDTBPres" Type="Guid" Nullable="false" />
+          <Property Name="FechaPrestamoTBPres" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaEntregaTBPres" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ComentarioTBPres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ActivoTBPres" Type="Boolean" />
+          <NavigationProperty Name="tbCliente" Relationship="Self.FK_tbPrestamo_tbCliente" FromRole="tbPrestamo" ToRole="tbCliente" />
+          <NavigationProperty Name="tbMaterialPrestamoes" Relationship="Self.FK_tbMaterialPrestamo_tbPrestamo" FromRole="tbPrestamo" ToRole="tbMaterialPrestamo" />
+          <NavigationProperty Name="tbUsuario" Relationship="Self.FK_tbPrestamo_tbUsuario" FromRole="tbPrestamo" ToRole="tbUsuario" />
+        </EntityType>
+        <EntityType Name="tbTipoUsuario">
+          <Key>
+            <PropertyRef Name="TipoIDTBTiUs" />
+          </Key>
+          <Property Name="TipoIDTBTiUs" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionTBTiUs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tbUsuarios" Relationship="Self.FK_tbUsuario_tbTipoUsuario" FromRole="tbTipoUsuario" ToRole="tbUsuario" />
+        </EntityType>
+        <EntityType Name="tbUsuario">
+          <Key>
+            <PropertyRef Name="UsuarioIDTBUsua" />
+          </Key>
+          <Property Name="UsuarioIDTBUsua" Type="Guid" Nullable="false" />
+          <Property Name="ContraseñaTBUsua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreUsuarioTBUsua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreTBUsua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApPaternoTBUsua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApMaternoTBUsua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EliminarTBUsua" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioTipoTBUsua" Type="Int32" Nullable="false" />
+          <Property Name="NivelTBUsua" Type="Int32" />
+          <NavigationProperty Name="tbNivel" Relationship="Self.FK_tbUsuario_tbNivel" FromRole="tbUsuario" ToRole="tbNivel" />
+          <NavigationProperty Name="tbPrestamoes" Relationship="Self.FK_tbPrestamo_tbUsuario" FromRole="tbUsuario" ToRole="tbPrestamo" />
+          <NavigationProperty Name="tbTipoUsuario" Relationship="Self.FK_tbUsuario_tbTipoUsuario" FromRole="tbUsuario" ToRole="tbTipoUsuario" />
+          <NavigationProperty Name="tbRegistroes" Relationship="Self.FK_tbRegistro_tbUsuario" FromRole="tbUsuario" ToRole="tbRegistro" />
+        </EntityType>
+        <EntityType Name="tbMaterialPrestamo">
+          <Key>
+            <PropertyRef Name="PrestamoIDTBMaPr" />
+            <PropertyRef Name="MaterialIDTBMaPr" />
+            <PropertyRef Name="CantidadTBMaPr" />
+          </Key>
+          <Property Name="PrestamoIDTBMaPr" Type="Guid" Nullable="false" />
+          <Property Name="MaterialIDTBMaPr" Type="Guid" Nullable="false" />
+          <Property Name="CantidadTBMaPr" Type="Int32" Nullable="false" />
+          <Property Name="CantidadEntregadaTBMaPr" Type="Int32" />
+          <NavigationProperty Name="tbMaterial" Relationship="Self.FK_tbMaterialPrestamo_tbMaterial" FromRole="tbMaterialPrestamo" ToRole="tbMaterial" />
+          <NavigationProperty Name="tbPrestamo" Relationship="Self.FK_tbMaterialPrestamo_tbPrestamo" FromRole="tbMaterialPrestamo" ToRole="tbPrestamo" />
+        </EntityType>
+        <EntityType Name="tbRegistro">
+          <Key>
+            <PropertyRef Name="RegistroIDTBRegi" />
+          </Key>
+          <Property Name="RegistroIDTBRegi" Type="Int32" Nullable="false" />
+          <Property Name="HoraTBRegi" Type="Time" Precision="7" />
+          <Property Name="FechaTBRegi" Type="DateTime" Precision="0" />
+          <Property Name="CatalogoTBRegi" Type="Guid" />
+          <Property Name="UsuarioTBRegi" Type="Guid" />
+          <NavigationProperty Name="tbCatalogo" Relationship="Self.FK_tbRegistro_tbCatalogo" FromRole="tbRegistro" ToRole="tbCatalogo" />
+          <NavigationProperty Name="tbUsuario" Relationship="Self.FK_tbRegistro_tbUsuario" FromRole="tbRegistro" ToRole="tbUsuario" />
+        </EntityType>
+        <Association Name="FK_tbAlumno_tbCarrera1">
+          <End Role="tbCarrera" Type="Self.tbCarrera" Multiplicity="1" />
+          <End Role="tbAlumno" Type="Self.tbAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCarrera">
+              <PropertyRef Name="CarreraIDTBCarr" />
+            </Principal>
+            <Dependent Role="tbAlumno">
+              <PropertyRef Name="CarreraIDTBAlum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbAlumno_tbCliente">
+          <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+          <End Role="tbAlumno" Type="Self.tbAlumno" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbCliente">
+              <PropertyRef Name="ClienteIDTBClie" />
+            </Principal>
+            <Dependent Role="tbAlumno">
+              <PropertyRef Name="ClienteIDTBAlum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRegistro_tbCatalogo">
+          <End Role="tbCatalogo" Type="Self.tbCatalogo" Multiplicity="0..1" />
+          <End Role="tbRegistro" Type="Self.tbRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCatalogo">
+              <PropertyRef Name="CatalogoIDTBCata" />
+            </Principal>
+            <Dependent Role="tbRegistro">
+              <PropertyRef Name="CatalogoTBRegi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaestro_tbCliente">
+          <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+          <End Role="tbMaestro" Type="Self.tbMaestro" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbCliente">
+              <PropertyRef Name="ClienteIDTBClie" />
+            </Principal>
+            <Dependent Role="tbMaestro">
+              <PropertyRef Name="ClienteIDTBMaes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPrestamo_tbCliente">
+          <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+          <End Role="tbPrestamo" Type="Self.tbPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCliente">
+              <PropertyRef Name="ClienteIDTBClie" />
+            </Principal>
+            <Dependent Role="tbPrestamo">
+              <PropertyRef Name="ClienteIDTBPres" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaestro_tbDepartamento1">
+          <End Role="tbDepartamento" Type="Self.tbDepartamento" Multiplicity="1" />
+          <End Role="tbMaestro" Type="Self.tbMaestro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartamento">
+              <PropertyRef Name="DepartamentoIDTBDepa" />
+            </Principal>
+            <Dependent Role="tbMaestro">
+              <PropertyRef Name="DepartamentoIDTBMaes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaterial_tbEstado">
+          <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="1" />
+          <End Role="tbMaterial" Type="Self.tbMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbEstado">
+              <PropertyRef Name="EstadoIDTBEsta" />
+            </Principal>
+            <Dependent Role="tbMaterial">
+              <PropertyRef Name="EstadoTBMate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaterialPrestamo_tbMaterial">
+          <End Role="tbMaterial" Type="Self.tbMaterial" Multiplicity="1" />
+          <End Role="tbMaterialPrestamo" Type="Self.tbMaterialPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMaterial">
+              <PropertyRef Name="MaterialIDTBMate" />
+            </Principal>
+            <Dependent Role="tbMaterialPrestamo">
+              <PropertyRef Name="MaterialIDTBMaPr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUsuario_tbNivel">
+          <End Role="tbNivel" Type="Self.tbNivel" Multiplicity="0..1" />
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbNivel">
+              <PropertyRef Name="NivelIDTBNive" />
+            </Principal>
+            <Dependent Role="tbUsuario">
+              <PropertyRef Name="NivelTBUsua" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMaterialPrestamo_tbPrestamo">
+          <End Role="tbPrestamo" Type="Self.tbPrestamo" Multiplicity="1" />
+          <End Role="tbMaterialPrestamo" Type="Self.tbMaterialPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbPrestamo">
+              <PropertyRef Name="PrestamoIDTBPres" />
+            </Principal>
+            <Dependent Role="tbMaterialPrestamo">
+              <PropertyRef Name="PrestamoIDTBMaPr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPrestamo_tbUsuario">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="1" />
+          <End Role="tbPrestamo" Type="Self.tbPrestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="UsuarioIDTBUsua" />
+            </Principal>
+            <Dependent Role="tbPrestamo">
+              <PropertyRef Name="UsuarioIDTBPres" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbUsuario_tbTipoUsuario">
+          <End Role="tbTipoUsuario" Type="Self.tbTipoUsuario" Multiplicity="1" />
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbTipoUsuario">
+              <PropertyRef Name="TipoIDTBTiUs" />
+            </Principal>
+            <Dependent Role="tbUsuario">
+              <PropertyRef Name="UsuarioTipoTBUsua" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRegistro_tbUsuario">
+          <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="0..1" />
+          <End Role="tbRegistro" Type="Self.tbRegistro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbUsuario">
+              <PropertyRef Name="UsuarioIDTBUsua" />
+            </Principal>
+            <Dependent Role="tbRegistro">
+              <PropertyRef Name="UsuarioTBRegi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WEBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbAlumnoes" EntityType="Self.tbAlumno" />
+          <EntitySet Name="tbCarreras" EntityType="Self.tbCarrera" />
+          <EntitySet Name="tbCatalogoes" EntityType="Self.tbCatalogo" />
+          <EntitySet Name="tbClientes" EntityType="Self.tbCliente" />
+          <EntitySet Name="tbDepartamentoes" EntityType="Self.tbDepartamento" />
+          <EntitySet Name="tbEstadoes" EntityType="Self.tbEstado" />
+          <EntitySet Name="tbMaestroes" EntityType="Self.tbMaestro" />
+          <EntitySet Name="tbMaterials" EntityType="Self.tbMaterial" />
+          <EntitySet Name="tbNivels" EntityType="Self.tbNivel" />
+          <EntitySet Name="tbPrestamoes" EntityType="Self.tbPrestamo" />
+          <EntitySet Name="tbTipoUsuarios" EntityType="Self.tbTipoUsuario" />
+          <EntitySet Name="tbUsuarios" EntityType="Self.tbUsuario" />
+          <EntitySet Name="tbMaterialPrestamoes" EntityType="Self.tbMaterialPrestamo" />
+          <EntitySet Name="tbRegistroes" EntityType="Self.tbRegistro" />
+          <AssociationSet Name="FK_tbAlumno_tbCarrera1" Association="Self.FK_tbAlumno_tbCarrera1">
+            <End Role="tbCarrera" EntitySet="tbCarreras" />
+            <End Role="tbAlumno" EntitySet="tbAlumnoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbAlumno_tbCliente" Association="Self.FK_tbAlumno_tbCliente">
+            <End Role="tbCliente" EntitySet="tbClientes" />
+            <End Role="tbAlumno" EntitySet="tbAlumnoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRegistro_tbCatalogo" Association="Self.FK_tbRegistro_tbCatalogo">
+            <End Role="tbCatalogo" EntitySet="tbCatalogoes" />
+            <End Role="tbRegistro" EntitySet="tbRegistroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaestro_tbCliente" Association="Self.FK_tbMaestro_tbCliente">
+            <End Role="tbCliente" EntitySet="tbClientes" />
+            <End Role="tbMaestro" EntitySet="tbMaestroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPrestamo_tbCliente" Association="Self.FK_tbPrestamo_tbCliente">
+            <End Role="tbCliente" EntitySet="tbClientes" />
+            <End Role="tbPrestamo" EntitySet="tbPrestamoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaestro_tbDepartamento1" Association="Self.FK_tbMaestro_tbDepartamento1">
+            <End Role="tbDepartamento" EntitySet="tbDepartamentoes" />
+            <End Role="tbMaestro" EntitySet="tbMaestroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaterial_tbEstado" Association="Self.FK_tbMaterial_tbEstado">
+            <End Role="tbEstado" EntitySet="tbEstadoes" />
+            <End Role="tbMaterial" EntitySet="tbMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaterialPrestamo_tbMaterial" Association="Self.FK_tbMaterialPrestamo_tbMaterial">
+            <End Role="tbMaterial" EntitySet="tbMaterials" />
+            <End Role="tbMaterialPrestamo" EntitySet="tbMaterialPrestamoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUsuario_tbNivel" Association="Self.FK_tbUsuario_tbNivel">
+            <End Role="tbNivel" EntitySet="tbNivels" />
+            <End Role="tbUsuario" EntitySet="tbUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMaterialPrestamo_tbPrestamo" Association="Self.FK_tbMaterialPrestamo_tbPrestamo">
+            <End Role="tbPrestamo" EntitySet="tbPrestamoes" />
+            <End Role="tbMaterialPrestamo" EntitySet="tbMaterialPrestamoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPrestamo_tbUsuario" Association="Self.FK_tbPrestamo_tbUsuario">
+            <End Role="tbUsuario" EntitySet="tbUsuarios" />
+            <End Role="tbPrestamo" EntitySet="tbPrestamoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbUsuario_tbTipoUsuario" Association="Self.FK_tbUsuario_tbTipoUsuario">
+            <End Role="tbTipoUsuario" EntitySet="tbTipoUsuarios" />
+            <End Role="tbUsuario" EntitySet="tbUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRegistro_tbUsuario" Association="Self.FK_tbRegistro_tbUsuario">
+            <End Role="tbUsuario" EntitySet="tbUsuarios" />
+            <End Role="tbRegistro" EntitySet="tbRegistroes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UTTModelStoreContainer" CdmEntityContainer="WEBContext">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="UTTModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbAlumnoes">
+            <EntityTypeMapping TypeName="UTTModel.tbAlumno">
+              <MappingFragment StoreEntitySet="tbAlumno">
+                <ScalarProperty Name="MatriculaTBAlum" ColumnName="MatriculaTBAlum" />
+                <ScalarProperty Name="NombreTBAlum" ColumnName="NombreTBAlum" />
+                <ScalarProperty Name="ApPaternoTBAlum" ColumnName="ApPaternoTBAlum" />
+                <ScalarProperty Name="ApMaternoTBAlum" ColumnName="ApMaternoTBAlum" />
+                <ScalarProperty Name="DireccionTBAlum" ColumnName="DireccionTBAlum" />
+                <ScalarProperty Name="TelefonoTBAlum" ColumnName="TelefonoTBAlum" />
+                <ScalarProperty Name="EmailTBAlum" ColumnName="EmailTBAlum" />
+                <ScalarProperty Name="ClienteIDTBAlum" ColumnName="ClienteIDTBAlum" />
+                <ScalarProperty Name="EliminarTBAlum" ColumnName="EliminarTBAlum" />
+                <ScalarProperty Name="CarreraIDTBAlum" ColumnName="CarreraIDTBAlum" />
+                <ScalarProperty Name="SemestreTBAlum" ColumnName="SemestreTBAlum" />
+                <ScalarProperty Name="GrupoTBAlum" ColumnName="GrupoTBAlum" />
+                <ScalarProperty Name="CuatriactTBAlum" ColumnName="CuatriactTBAlum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCarreras">
+            <EntityTypeMapping TypeName="UTTModel.tbCarrera">
+              <MappingFragment StoreEntitySet="tbCarrera">
+                <ScalarProperty Name="DescripcionTBCarr" ColumnName="DescripcionTBCarr" />
+                <ScalarProperty Name="EliminarTBCarr" ColumnName="EliminarTBCarr" />
+                <ScalarProperty Name="CarreraIDTBCarr" ColumnName="CarreraIDTBCarr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCatalogoes">
+            <EntityTypeMapping TypeName="UTTModel.tbCatalogo">
+              <MappingFragment StoreEntitySet="tbCatalogo">
+                <ScalarProperty Name="CatalogoIDTBCata" ColumnName="CatalogoIDTBCata" />
+                <ScalarProperty Name="DescripcionTBCata" ColumnName="DescripcionTBCata" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbClientes">
+            <EntityTypeMapping TypeName="UTTModel.tbCliente">
+              <MappingFragment StoreEntitySet="tbCliente">
+                <ScalarProperty Name="ClienteIDTBClie" ColumnName="ClienteIDTBClie" />
+                <ScalarProperty Name="EliminarTBClie" ColumnName="EliminarTBClie" />
+                <ScalarProperty Name="TienePrestamoTBClie" ColumnName="TienePrestamoTBClie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDepartamentoes">
+            <EntityTypeMapping TypeName="UTTModel.tbDepartamento">
+              <MappingFragment StoreEntitySet="tbDepartamento">
+                <ScalarProperty Name="DescripcionTBDepa" ColumnName="DescripcionTBDepa" />
+                <ScalarProperty Name="EliminarTBDepa" ColumnName="EliminarTBDepa" />
+                <ScalarProperty Name="DepartamentoIDTBDepa" ColumnName="DepartamentoIDTBDepa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbEstadoes">
+            <EntityTypeMapping TypeName="UTTModel.tbEstado">
+              <MappingFragment StoreEntitySet="tbEstado">
+                <ScalarProperty Name="EstadoIDTBEsta" ColumnName="EstadoIDTBEsta" />
+                <ScalarProperty Name="DescripcionTBEsta" ColumnName="DescripcionTBEsta" />
+                <ScalarProperty Name="ComentarioTBEsta" ColumnName="ComentarioTBEsta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMaestroes">
+            <EntityTypeMapping TypeName="UTTModel.tbMaestro">
+              <MappingFragment StoreEntitySet="tbMaestro">
+                <ScalarProperty Name="MatriculaTBMaes" ColumnName="MatriculaTBMaes" />
+                <ScalarProperty Name="NombreTBMaes" ColumnName="NombreTBMaes" />
+                <ScalarProperty Name="ApPaternoTBMaes" ColumnName="ApPaternoTBMaes" />
+                <ScalarProperty Name="ApMaternoTBMaes" ColumnName="ApMaternoTBMaes" />
+                <ScalarProperty Name="DireccionTBMaes" ColumnName="DireccionTBMaes" />
+                <ScalarProperty Name="TelefonoTBMaes" ColumnName="TelefonoTBMaes" />
+                <ScalarProperty Name="EmailTBMaes" ColumnName="EmailTBMaes" />
+                <ScalarProperty Name="ClienteIDTBMaes" ColumnName="ClienteIDTBMaes" />
+                <ScalarProperty Name="EliminarTBMaes" ColumnName="EliminarTBMaes" />
+                <ScalarProperty Name="DepartamentoIDTBMaes" ColumnName="DepartamentoIDTBMaes" />
+                <ScalarProperty Name="PrestamoEspecialTBMaes" ColumnName="PrestamoEspecialTBMaes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMaterials">
+            <EntityTypeMapping TypeName="UTTModel.tbMaterial">
+              <MappingFragment StoreEntitySet="tbMaterial">
+                <ScalarProperty Name="MaterialIDTBMate" ColumnName="MaterialIDTBMate" />
+                <ScalarProperty Name="DescripcionTBMate" ColumnName="DescripcionTBMate" />
+                <ScalarProperty Name="MarcaTBMate" ColumnName="MarcaTBMate" />
+                <ScalarProperty Name="CostoTBMate" ColumnName="CostoTBMate" />
+                <ScalarProperty Name="CantidadTBMate" ColumnName="CantidadTBMate" />
+                <ScalarProperty Name="EliminarTBMate" ColumnName="EliminarTBMate" />
+                <ScalarProperty Name="EstadoTBMate" ColumnName="EstadoTBMate" />
+                <ScalarProperty Name="CodigoTBMate" ColumnName="CodigoTBMate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbNivels">
+            <EntityTypeMapping TypeName="UTTModel.tbNivel">
+              <MappingFragment StoreEntitySet="tbNivel">
+                <ScalarProperty Name="NivelIDTBNive" ColumnName="NivelIDTBNive" />
+                <ScalarProperty Name="DescripcionTBNive" ColumnName="DescripcionTBNive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbPrestamoes">
+            <EntityTypeMapping TypeName="UTTModel.tbPrestamo">
+              <MappingFragment StoreEntitySet="tbPrestamo">
+                <ScalarProperty Name="PrestamoIDTBPres" ColumnName="PrestamoIDTBPres" />
+                <ScalarProperty Name="UsuarioIDTBPres" ColumnName="UsuarioIDTBPres" />
+                <ScalarProperty Name="ClienteIDTBPres" ColumnName="ClienteIDTBPres" />
+                <ScalarProperty Name="FechaPrestamoTBPres" ColumnName="FechaPrestamoTBPres" />
+                <ScalarProperty Name="FechaEntregaTBPres" ColumnName="FechaEntregaTBPres" />
+                <ScalarProperty Name="ComentarioTBPres" ColumnName="ComentarioTBPres" />
+                <ScalarProperty Name="ActivoTBPres" ColumnName="ActivoTBPres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTipoUsuarios">
+            <EntityTypeMapping TypeName="UTTModel.tbTipoUsuario">
+              <MappingFragment StoreEntitySet="tbTipoUsuario">
+                <ScalarProperty Name="TipoIDTBTiUs" ColumnName="TipoIDTBTiUs" />
+                <ScalarProperty Name="DescripcionTBTiUs" ColumnName="DescripcionTBTiUs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUsuarios">
+            <EntityTypeMapping TypeName="UTTModel.tbUsuario">
+              <MappingFragment StoreEntitySet="tbUsuario">
+                <ScalarProperty Name="UsuarioIDTBUsua" ColumnName="UsuarioIDTBUsua" />
+                <ScalarProperty Name="ContraseñaTBUsua" ColumnName="ContraseñaTBUsua" />
+                <ScalarProperty Name="NombreUsuarioTBUsua" ColumnName="NombreUsuarioTBUsua" />
+                <ScalarProperty Name="NombreTBUsua" ColumnName="NombreTBUsua" />
+                <ScalarProperty Name="ApPaternoTBUsua" ColumnName="ApPaternoTBUsua" />
+                <ScalarProperty Name="ApMaternoTBUsua" ColumnName="ApMaternoTBUsua" />
+                <ScalarProperty Name="EliminarTBUsua" ColumnName="EliminarTBUsua" />
+                <ScalarProperty Name="UsuarioTipoTBUsua" ColumnName="UsuarioTipoTBUsua" />
+                <ScalarProperty Name="NivelTBUsua" ColumnName="NivelTBUsua" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMaterialPrestamoes">
+            <EntityTypeMapping TypeName="UTTModel.tbMaterialPrestamo">
+              <MappingFragment StoreEntitySet="tbMaterialPrestamo">
+                <ScalarProperty Name="PrestamoIDTBMaPr" ColumnName="PrestamoIDTBMaPr" />
+                <ScalarProperty Name="MaterialIDTBMaPr" ColumnName="MaterialIDTBMaPr" />
+                <ScalarProperty Name="CantidadTBMaPr" ColumnName="CantidadTBMaPr" />
+                <ScalarProperty Name="CantidadEntregadaTBMaPr" ColumnName="CantidadEntregadaTBMaPr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRegistroes">
+            <EntityTypeMapping TypeName="UTTModel.tbRegistro">
+              <MappingFragment StoreEntitySet="tbRegistro">
+                <ScalarProperty Name="RegistroIDTBRegi" ColumnName="RegistroIDTBRegi" />
+                <ScalarProperty Name="HoraTBRegi" ColumnName="HoraTBRegi" />
+                <ScalarProperty Name="FechaTBRegi" ColumnName="FechaTBRegi" />
+                <ScalarProperty Name="CatalogoTBRegi" ColumnName="CatalogoTBRegi" />
+                <ScalarProperty Name="UsuarioTBRegi" ColumnName="UsuarioTBRegi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
